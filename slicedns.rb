@@ -65,7 +65,7 @@ def notice(r)
   ' | ' + r.name.to_s.ljust(30) + 
   ' | ' + r.record_type.to_s.ljust(5) + 
   ' | ' + r.aux.to_s.rjust(4) + 
-  ' | ' + r.data.to_s.ljust(30) + 
+  ' | ' + r.data.to_s.ljust(34) + 
   ' | '
 end
 
@@ -125,12 +125,24 @@ google_cname = [
   { :record_type => 'CNAME', :name => 'calendar', :data => 'ghs.google.com.' }
 ]  
 
+google_srv = [
+  { :record_type => 'SRV', :name => "_xmpp-server._tcp.#{zone_name}", :aux => 5, :data => '0 5269 xmpp-server.l.google.com.'},
+  { :record_type => 'SRV', :name => "_xmpp-server._tcp.#{zone_name}", :aux => 20, :data => '0 5269 xmpp-server1.l.google.com.'},
+  { :record_type => 'SRV', :name => "_xmpp-server._tcp.#{zone_name}", :aux => 20, :data => '0 5269 xmpp-server2.l.google.com.'},
+  { :record_type => 'SRV', :name => "_xmpp-server._tcp.#{zone_name}", :aux => 20, :data => '0 5269 xmpp-server3.l.google.com.'},
+  { :record_type => 'SRV', :name => "_xmpp-server._tcp.#{zone_name}", :aux => 20, :data => '0 5269 xmpp-server4.l.google.com.'},
+  { :record_type => 'SRV', :name => "_jabber._tcp.#{zone_name}", :aux => 5, :data => '0 5269 xmpp-server.l.google.com.'},
+  { :record_type => 'SRV', :name => "_jabber._tcp.#{zone_name}", :aux => 20, :data => '0 5269 xmpp-server1.l.google.com.'},
+  { :record_type => 'SRV', :name => "_jabber._tcp.#{zone_name}", :aux => 20, :data => '0 5269 xmpp-server2.l.google.com.'},
+  { :record_type => 'SRV', :name => "_jabber._tcp.#{zone_name}", :aux => 20, :data => '0 5269 xmpp-server3.l.google.com.'},
+  { :record_type => 'SRV', :name => "_jabber._tcp.#{zone_name}", :aux => 20, :data => '0 5269 xmpp-server4.l.google.com.'}
+]
+
 ns_records = [
   { :record_type => 'NS', :name => zone_name, :data => 'ns1.slicehost.com.' },
   { :record_type => 'NS', :name => zone_name, :data => 'ns2.slicehost.com.' },
   { :record_type => 'NS', :name => zone_name, :data => 'ns3.slicehost.com.' }
 ]
-
 
 # DO IT!!
 
@@ -152,6 +164,11 @@ input = STDIN.gets.chomp.strip
 unless input.downcase == "n"
   puts "\nCreating Google MX records..."
   google_mx.each do |r|
+    create_record(r, defaults)
+  end
+  
+  puts "\nCreating Googel SRV records..."
+  google_srv.each do |r|
     create_record(r, defaults)
   end
 

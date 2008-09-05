@@ -167,7 +167,7 @@ unless input.downcase == "n"
     create_record(r, defaults)
   end
   
-  puts "\nCreating Googel SRV records..."
+  puts "\nCreating Google SRV records..."
   google_srv.each do |r|
     create_record(r, defaults)
   end

@@ -27,25 +27,35 @@ If the zone already exists, you will be prompted to Cancel or Overwrite the exis
 
 The following records will be created in the example.com. zone:
 
-    example.com.    A       [your slice's IP]
-    *.example.com.  A       [your slice's IP]
+    example.com.                    A       [your slice's IP]
+    *.example.com.                  A       [your slice's IP]
                             
-    example.com.    NS      ns1.slicehost.com.
-    example.com.    NS      ns2.slicehost.com.
-    example.com.    NS      ns3.slicehost.com.
+    example.com.                    NS      ns1.slicehost.com.
+    example.com.                    NS      ns2.slicehost.com.
+    example.com.                    NS      ns3.slicehost.com.
                             
 If you respond with Y to "Add records for Google Apps? [Yn]" the following will also be created:
                             
-    example.com.    MX      10 ASPMX.L.GOOGLE.COM.
-    example.com.    MX      20 ALT1.ASPMX.L.GOOGLE.COM.
-    example.com.    MX      20 ALT2.ASPMX.L.GOOGLE.COM.
-    example.com.    MX      30 ASPMX2.GOOGLEMAIL.COM.
-    example.com.    MX      30 ASPMX3.GOOGLEMAIL.COM.
-    example.com.    MX      30 ASPMX4.GOOGLEMAIL.COM.
-    example.com.    MX      30 ASPMX5.GOOGLEMAIL.COM.
+    example.com.                    MX      10 ASPMX.L.GOOGLE.COM.
+    example.com.                    MX      20 ALT1.ASPMX.L.GOOGLE.COM.
+    example.com.                    MX      20 ALT2.ASPMX.L.GOOGLE.COM.
+    example.com.                    MX      30 ASPMX2.GOOGLEMAIL.COM.
+    example.com.                    MX      30 ASPMX3.GOOGLEMAIL.COM.
+    example.com.                    MX      30 ASPMX4.GOOGLEMAIL.COM.
+    example.com.                    MX      30 ASPMX5.GOOGLEMAIL.COM.
                             
-    mail            CNAME   ghs.google.com.
-    start           CNAME   ghs.google.com.
-    docs            CNAME   ghs.google.com.
-    calendar        CNAME   ghs.google.com.
+    mail                            CNAME   ghs.google.com.
+    start                           CNAME   ghs.google.com.
+    docs                            CNAME   ghs.google.com.
+    calendar                        CNAME   ghs.google.com.
     
+    _xmpp-server._tcp.example.com.  SRV      5 0 5269 xmpp-server.l.google.com.
+    _xmpp-server._tcp.example.com.  SRV     20 0 5269 xmpp-server1.l.google.com.
+    _xmpp-server._tcp.example.com.  SRV     20 0 5269 xmpp-server2.l.google.com.
+    _xmpp-server._tcp.example.com.  SRV     20 0 5269 xmpp-server3.l.google.com.
+    _xmpp-server._tcp.example.com.  SRV     20 0 5269 xmpp-server4.l.google.com.
+    _jabber._tcp.example.com.       SRV      5 0 5269 xmpp-server.l.google.com.
+    _jabber._tcp.example.com.       SRV     20 0 5269 xmpp-server1.l.google.com.
+    _jabber._tcp.example.com.       SRV     20 0 5269 xmpp-server2.l.google.com.
+    _jabber._tcp.example.com.       SRV     20 0 5269 xmpp-server3.l.google.com.
+    _jabber._tcp.example.com.       SRV     20 0 5269 xmpp-server4.l.google.com.

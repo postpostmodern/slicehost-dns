@@ -139,9 +139,9 @@ google_srv = [
 ]
 
 ns_records = [
-  { :record_type => 'NS', :name => zone_name, :data => 'ns1.slicehost.com.' },
-  { :record_type => 'NS', :name => zone_name, :data => 'ns2.slicehost.com.' },
-  { :record_type => 'NS', :name => zone_name, :data => 'ns3.slicehost.com.' }
+  { :record_type => 'NS', :name => zone_name, :data => 'ns1.slicehost.net.' },
+  { :record_type => 'NS', :name => zone_name, :data => 'ns2.slicehost.net.' },
+  { :record_type => 'NS', :name => zone_name, :data => 'ns3.slicehost.net.' }
 ]
 
 # DO IT!!

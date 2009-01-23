@@ -30,9 +30,9 @@ The following records will be created in the example.com. zone:
     example.com.                    A       [your slice's IP]
     *.example.com.                  A       [your slice's IP]
                             
-    example.com.                    NS      ns1.slicehost.com.
-    example.com.                    NS      ns2.slicehost.com.
-    example.com.                    NS      ns3.slicehost.com.
+    example.com.                    NS      ns1.slicehost.net.
+    example.com.                    NS      ns2.slicehost.net.
+    example.com.                    NS      ns3.slicehost.net.
                             
 If you respond with Y to "Add records for Google Apps? [Yn]" the following will also be created:
                             
